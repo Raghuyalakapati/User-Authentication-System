@@ -1,0 +1,266 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+		<head>
+			<meta charset="ISO-8859-1">
+			<title>Registration</title>
+			
+			 <style>
+		   
+					body{
+					  display: flex;
+					  justify-content: center;
+					  align-items: center;
+					  min-height: 100vh;
+					  background-color: rgb(167, 204, 241);
+					   }
+					.container{
+				       background-color: rgb(255, 255, 255);
+				       width: 1000px ;
+				       height: 600px;
+				       border-radius: 1em;
+				       box-shadow: 2px 3px 23px rgb(145, 56, 56);
+					}
+					
+					 h2{
+					  text-align:center ;
+					  color: rgb(0, 88, 117);
+					}
+					.inp #Hello{
+					  text-align: center;
+					  color: rgb(0, 88, 117);
+					}
+					form{
+					  height: 300px;
+					  width: 400px;
+					  border-radius: 5px;
+					  padding:20px;
+					  transform: translate(120%,-6%);
+					}
+					
+					.inp input{
+					  width: 70%;
+					  height: 20px;
+					  margin: 20px 20px 20px 54px;
+					  position: relative; 
+					  padding: 5px 2px 5px 6px;
+					  border: none ;
+					  border-bottom: 1px solid rgb(122, 122, 122);
+					} 
+					input:focus{
+					  border: none;
+					  outline: none;
+					  border: 1px solid #3483eb;
+					  border-radius: 5px;
+					}
+					
+					   button{
+					    margin-top:20px;
+					    color: white;
+					    border: none;
+					    background-color: cornflowerblue;
+					    font-weight: 600;
+					    font-size: 15px;
+					    border-radius: 20px;
+					    width:80%;
+					    height: 35px;
+					    transform: translate(12%,20%);
+					    border-color: aliceblue;
+					    transition: 0.5s;
+					   } 
+					   button:hover{
+					    background-color: transparent;
+					    border: 1px solid cornflowerblue;
+					    color: cornflowerblue;
+					    cursor: pointer;
+					    box-shadow: 3px 4px 25px rgb(7, 92, 162);
+					   }
+					   
+					   .img1{
+					   position: relative;
+					   }
+					   
+					    img{
+					      width: 510px;
+					      position: absolute;
+					      top: 25%;
+					      transform: translate(5%,-50%);
+					   }
+				 span {
+				      width:100%;					    
+				      position:relative;
+				  
+				      }
+				 .err{
+					  font-size:15px;
+					  color:red;
+					  position:absolute;
+					  left:17%;
+					  padding-top:58px;
+					  pointer-events:none;
+					 }
+				</style>
+      </head>
+      
+<body>
+	  <div class="img1">
+	    <img src="images/hsp1.jpg" alt="ImageRegistration"> 
+	   </div>
+		  <div class="container">
+		      <form name="register"  method="post" action="register" id="fff">
+		          <h2>Register Now</h2>
+		            <div class="inp">
+			              <input type="text" id="fname" name="FirstName"  placeholder="FirstName">
+			              <span id="spanfname" class="err"></span>
+		             </div>
+		             <div class="inp">
+			              <input type="text" id="lname" name="LastName" placeholder="LastName" >
+			              <span id="spanlname" class="err"></span>
+		              </div>
+		              
+		               <div class="inp">
+			              <input type="text" id="num" name="Mobile" placeholder="Mobile" >
+			              <span id="spannum" class="err"></span>
+		               </div>   
+			            <div class="inp">
+				              <input type="email" id="email" name="Email" placeholder="Email" >
+				              <span id="spannemail" class="err"></span>
+			              </div>
+			            <div class="inp">
+				              <input type="text" id="pwd1" name="Password" placeholder="Password" >
+				              <span id="spanpwd1" class="err"></span>
+			              </div>
+			            <div class="inp">
+				              <input type="text"  id="pwd2" name="ConfirmPassword" placeholder="ConfirmPassword" >
+				              <span id="spanpwd2" class="err"></span>
+				              <span id="spanmatch" class="err"></span>
+			              </div>
+		              
+		           <div>
+		              <button type="submit"  id="sub" >Submit</button>
+		           </div>
+		      </form>
+		</div>
+		
+		
+     <script>
+     
+     <!-- Validation Starts -->
+        document.getElementById("fff").addEventListener("submit",OnSubmit);
+        
+         function OnSubmit(event){
+        	 
+        	// FirstName validation
+        	var fn = document.getElementById("fname").value;
+        	if(fn=="" || fn==null){
+        		event.preventDefault();
+        		document.getElementById("spanfname").innerHTML="Kindly Enter Your FirstName";
+        	}
+        	else{
+        		document.getElementById("spanfname").innerHTML="";
+        	}
+        	
+        	// LastName validation
+        	var ln = document.getElementById("lname").value;
+        	if(ln=="" || ln==null){
+        		 event.preventDefault();
+        		 document.getElementById("spanlname").innerHTML="Kindly Enter Your LastName";
+        	}
+        	else{
+        		document.getElementById("spanlname").innerHTML="";
+        	}
+        	
+        	// Mobile Number Validation
+        	var mn = document.getElementById("num").value;
+        	if(mn=="" || mn==null){
+        		 event.preventDefault();
+        		 document.getElementById("spannum").innerHTML="Kindly Enter Your Mobile Number";
+        	}
+        	else{
+        		document.getElementById("spannum").innerHTML="";
+        	}
+        	
+        	// Email validation
+        	var email = document.getElementById("email").value;
+        	if(email=="" || email==null){
+        		 event.preventDefault();
+        		 document.getElementById("spannemail").innerHTML="Kindly Enter Your E-mail";
+        	}
+        	else{
+        		document.getElementById("spannemail").innerHTML="";
+        	}
+        	
+        	// Password Validation
+        	var pwd = document.getElementById("pwd1").value;
+        	if(pwd=="" || pwd==null){
+        		 event.preventDefault();
+        		 document.getElementById("spanpwd1").innerHTML="Kindly Enter Your Password";
+        	}
+        	else{
+        		document.getElementById("spanpwd1").innerHTML="";
+        	}
+        	
+        	// Confirm Password Validation
+        	var cpwd = document.getElementById("pwd2").value;
+        	if(cpwd=="" || cpwd==null){
+        		 event.preventDefault();
+        		 document.getElementById("spanpwd2").innerHTML="Kindly Enter Your ConfirmPassword";
+        	}
+        	else{
+        		document.getElementById("spanpwd2").innerHTML="";
+        	}
+        	
+        	// Password Matching Validation
+        	if(pwd!=cpwd){
+        		event.preventDefault();
+        		document.getElementById("spanmatch").innerHTML="Please confirm your password correctly";
+
+        	}
+        	else{
+        		document.getElementById("spanmatch").innerHTML="";
+
+        	}  	
+        }
+       
+         <!-- Validation ends -->
+
+     </script>
+    
+   </body>
+</html>
+
+
+
+
+
+<!--   .dropdown{
+					    margin-bottom: 15px;
+					      
+					   }
+					   .dropdown select{
+					    color: rgb(117, 117, 117);
+					    width: 70%;
+					    height: 35px;
+					    margin-left: 58px;
+					    margin-top: 20px;
+					    border: none ;
+					    border-bottom: 1px solid rgb(57, 56, 56);
+					   }
+					.dropdown select option{
+					  font-size: 15px;
+					  font-weight: 50;
+					  color: rgb(90, 90, 90);
+					   } 
+					   
+					   
+		          <div class="dropdown">
+             	<span id="spangender" class="err"></span>
+              <select name="gender" id="gender">
+	                  <Option  value="Male" >Male</Option>
+	                  <Option  value="Female">Female</Option>
+	                  <Option value="Others">Others</Option>
+               </select>
+             </div>    
+-->
+		

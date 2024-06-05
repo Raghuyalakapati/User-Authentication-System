@@ -1,0 +1,134 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="ISO-8859-1">
+                <title>LoginPage</title>
+		  <style>
+		        body{
+		            display: flex;
+		            justify-content: center;
+		            align-items: center;
+		            min-height: 100vh;
+		            background-color: rgb(167, 204, 241);
+		        }
+		         
+		        .container{
+		            width: 1000px;
+		            height: 600px;
+		            background-color: white;
+		            border-radius: 1em;
+		            box-shadow: 2px 3px 23px rgb(145, 56, 56);
+		        }
+		
+		        form{
+		            width: 500px;
+		            height: 400px;
+		            transform: translate(100%,30%);
+		        }
+		        h2{
+		            text-align: center;
+		            font-size: 25x;
+		            color: rgb(0, 88, 117);
+		
+		        }
+		
+		         .ib input{
+		            width: 60%;
+		            height: 23px;
+		            margin: 20px 20px 20px 84px;
+		            position: relative; 
+		            padding: 5px 2px 5px 6px;
+		            border: none ;
+		            border-bottom: 1px solid rgb(122, 122, 122);
+		        }
+		        input:focus{
+		            border: none;
+		            outline: none;
+		            border: 1px solid #3483eb;
+		            border-radius: 6px;
+		         }
+		
+		         button{
+		            color: white;
+		            border: none;
+		            background-color: cornflowerblue;
+		            font-weight: 600;
+		            font-size: 15px;
+		            border-radius: 20px;
+		            width:65%;
+		            height: 35px;
+		            transform: translate(23%,40%);
+		            border-color: rgb(255, 255, 255);
+		            transition: 0.5s;
+		            margin-top: 10px;
+		        } 
+		
+		        button:hover{
+		            background-color: transparent;
+		            border: 1px solid cornflowerblue;
+		            color: cornflowerblue;
+		            cursor: pointer;
+		            box-shadow: 2px 2px 15px rgb(61, 61, 61);     
+		        }
+		        .img2{
+		                position: relative;
+		             }
+                img{
+                width: 530px;
+                position: absolute;
+                top: 25%;
+                transform: translate(15%,-45%);
+            }
+		            
+		    .checkbox{
+		        margin-top: 15px ;
+		        transform: translateX(90px);
+		    }
+		
+	  </style>
+    </head>
+  <body>
+    <!-- Login image  -->
+        <div class="img2">
+            <img src="images/hsp2.jpg">	
+         </div>
+          <!-- Login image end..  -->
+          
+    <!-- Login form starts..  -->
+         <div class="container">
+            <form name="loginform" id="ff"  method="post" action="Login">
+                 <h2 >Login</h2>
+                 <div class="ib" >
+                    <input type="email" id="email" name="email" placeholder="Email" >
+                 </div>
+                 <div class="ib" >
+                    <input type="password" id="pwd" name="password" placeholder="Password" >
+                 </div>
+                 <div class="checkbox" >
+                    <label><input type="checkbox" id="check" name="check">Accept term and conditions  <a href="#">conditions</a></label>
+                 </div>
+                 <button type="submit" id="btn" class="btn" disabled="disabled">Login</button>
+            </form>
+         </div>
+  <!-- Login form end..  -->
+         
+	     <script>
+	        document.getElementById("check").addEventListener("change",check);
+	
+	         function check(){
+	            var a =document.getElementById("check").checked;
+	            if(a==true){
+	                document.getElementById("btn").disabled="";
+	            }
+	            else{
+	                document.getElementById("btn").disabled="disabled";
+	            }
+	        }
+	
+	      </script>
+    </body>
+</html>
+				
+			
