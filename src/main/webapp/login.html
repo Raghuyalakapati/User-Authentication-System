@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 		<head>
@@ -86,6 +85,24 @@
 		        margin-top: 15px ;
 		        transform: translateX(90px);
 		    }
+		    .account{
+				position: absolute;
+				bottom: 20%;
+				right: 40%;
+			}
+		    .account a{
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: 600;
+			}
+			
+			 .account a:hover{
+				text-decoration:underline;
+			}
+			
+			.account p{
+				transform: translate(30%,50%);
+			}
 		
 	  </style>
     </head>
@@ -98,13 +115,15 @@
           
     <!-- Login form starts..  -->
          <div class="container">
-            <form name="loginform" id="ff"  method="post" action="Login">
+            <form name="loginform" id="ff"  method="post" action="login">
                  <h2 >Login</h2>
                  <div class="ib" >
                     <input type="email" id="email" name="email" placeholder="Email" >
+                    <span class="err" id="spanemail"></span>
                  </div>
                  <div class="ib" >
                     <input type="password" id="pwd" name="password" placeholder="Password" >
+                    <span class="err" id="spanpass"></span>
                  </div>
                  <div class="checkbox" >
                     <label><input type="checkbox" id="check" name="check">Accept term and conditions  <a href="#">conditions</a></label>
@@ -113,6 +132,10 @@
             </form>
          </div>
   <!-- Login form end..  -->
+  
+    <div class="account">
+		<p>Don't have an account <a href="register.html"> Create account</a></p>
+	</div>
          
 	     <script>
 	        document.getElementById("check").addEventListener("change",check);
@@ -126,9 +149,44 @@
 	                document.getElementById("btn").disabled="disabled";
 	            }
 	        }
-	
+	        
+
+	         
+
 	      </script>
+
     </body>
 </html>
-				
+		
+		
+		
+		
+		
+			        <!--Validation starts-->
+			        
+	<!--         document.getElementById("ff").addEventListener("submit",sub);
+	         function sub(event){
+				 //Email validation
+				 var email=document.getElementById("email").value;
+				 if(email==null || email==""){
+				 event.preventDefault();
+				 document.getElementById("spanemail").innerHTML="Kindly Enter Your Email";
+				 }
+				 else {
+				  document.getElementById("spanemail").innerHTML="";
+
+				 }
+				 
+			   var pass=document.getElementById("pwd").value;
+				if(pass==null || pass==""){
+				 event.preventDefault();
+				 document.getElementById("spanpass").innerHTML="Kindly Enter Your Password";
+				 }
+				 else {
+				  document.getElementById("spanpass").innerHTML=""; 
+			 }		
+			   -->
+			 
+			 			        <!--Validation starts-->
+
 			
